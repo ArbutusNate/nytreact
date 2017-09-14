@@ -13,15 +13,25 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
+  summary: {
+    type: String,
+    required: true
+  },
   date : {
     type: Date,
-    require: true
+    required: true
   },
   saved: {
     type: Boolean,
     required: true,
     default: false
-  }
+  },
+  notes: [{
+    // Store ObjectIds in the array
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Note model
+    ref: "Note"
+  }]
 });
 
 // Create the Article model with the ArticleSchema
