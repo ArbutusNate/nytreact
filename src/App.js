@@ -2,9 +2,23 @@ import React, { Component } from 'react';
 // import logo from './logo.svg'
 import ResultBox from "./components/ResultBox";
 import SavedBox from "./components/SavedBox";
+import Search from "./components/Search";
 import './App.css';
 
 class App extends Component {
+  state = {
+    search: "",
+    results: [],
+  }
+
+  searchApi = (event) => {
+    event.preventDefault();
+  }
+
+  saveArticle = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="wrapper">
@@ -12,16 +26,13 @@ class App extends Component {
           <h2>New York Times Search</h2>
         </div>
         <div className="search">
-          <form>
-            <label for="topic">Topic</label><br/>
-            <input type="text" id="topic" name="topic" /><br/>
-            <label for="start-year">Start Year</label><br/>
-            <input type="text" id="start-year" name="start-year" /><br/>
-            <label for="end-year">End Year</label><br/>
-            <input type="text" id="end-year" name="end-year" /><br/>
-            <input type="submit" value="Search" />
-          </form>
+          {
+            <Search
+            //Get info from search box
+            />
+          }
         </div>
+
         <div className="results">
           {
             <ResultBox

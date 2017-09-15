@@ -3,7 +3,6 @@
   const bodyParser = require("body-parser");
   const mongoose = require("mongoose");
   const request = require("request");
-  // const Note = require("./models/Note.js");
   const Article = require("./models/Article.js");
   // Initialize Express
   const app = express();
@@ -27,14 +26,14 @@ mongoose.connect(
 const db = mongoose.connection;
 
 // Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+  db.on("error", function(error) {
+    console.log("Mongoose Error: ", error);
+  });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+  db.once("open", function() {
+    console.log("Mongoose connection successful.");
+  });
 
 // Listen on port 3000
   app.listen(process.env.PORT || 3000, () => {
