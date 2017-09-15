@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg'
 import ResultBox from "./components/ResultBox";
 import SavedBox from "./components/SavedBox";
 import './App.css';
@@ -13,12 +13,12 @@ class App extends Component {
         </div>
         <div className="search">
           <form>
-            <label for="topic">Topic</label>
-            <input type="text" id="topic" name="topic" />
-            <label for="start-year">Start Year</label>
-            <input type="text" id="start-year" name="start-year" />
-            <label for="end-year">End Year</label>
-            <input type="text" id="end-year" name="end-year" />
+            <label for="topic">Topic</label><br/>
+            <input type="text" id="topic" name="topic" /><br/>
+            <label for="start-year">Start Year</label><br/>
+            <input type="text" id="start-year" name="start-year" /><br/>
+            <label for="end-year">End Year</label><br/>
+            <input type="text" id="end-year" name="end-year" /><br/>
             <input type="submit" value="Search" />
           </form>
         </div>
