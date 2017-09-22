@@ -1,14 +1,27 @@
 import React from "react";
-import "./ResultBox.css";
+import ArticleBox from "../ArticleBox";
 
 const ResultBox = props =>
-  <div className="result">
-    <div className="result-content">
-      <a href="{props.link}"><h2>{props.title}</h2></a>
-      <p className="result-summary">{props.summary}</p>
-      <p className="result-date">{props.date}</p>
-    </div>
-    <button className="save-article">Save</button>
+
+  <div className="result-box">
+
+    <ul className="list-group search-results">
+      {props.results.map(results =>
+        <li key={results.title} className="list-group-item">
+          <a href={results.web_url}> <h2>{results.headline.main}</h2> </a>
+          <button
+            data-name={results.headline.main}
+          > X </button>
+          <button
+            data-name={results.headline.main}
+            data-url={results.web_url}
+          >Save</button>
+        </li>
+      )}
+    </ul>
+
   </div>;
 
 export default ResultBox;
+
+

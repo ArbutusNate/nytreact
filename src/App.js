@@ -1,55 +1,17 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg'
-import ResultBox from "./components/ResultBox";
-import SavedBox from "./components/SavedBox";
-import Search from "./components/Search";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Wrapper from "./components/Wrapper";
 import './App.css';
+// import axios from "axios";
 
-class App extends Component {
-  state = {
-    search: "",
-    results: [],
-  }
+const App = () =>
 
-  searchApi = (event) => {
-    event.preventDefault();
-  }
+  <Router>
+    <div>
+      <Wrapper>
 
-  saveArticle = (event) => {
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <div className="wrapper">
-        <div className="header">
-          <h2>New York Times Search</h2>
-        </div>
-        <div className="search">
-          {
-            <Search
-            //Get info from search box
-            />
-          }
-        </div>
-
-        <div className="results">
-          {
-            <ResultBox
-            // PASS IN RESULT JSON
-            />
-          }
-        </div>
-        <div className="saved-articles">
-          {
-            <SavedBox
-            // PASS IN SAVED ARTICLES
-            />
-          }
-        </div>
-      </div>
-    );
-  }
-}
+      </Wrapper>
+    </div>
+  </Router>
 
 export default App;

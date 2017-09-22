@@ -20,7 +20,7 @@ app.use(express.static("public"));
 
 // Database configuration with mongoose
 mongoose.connect(
-  "mongodb://localhost/nytreact"
+  "mongodb://localhost/articles"
 );
 
 const db = mongoose.connection;
