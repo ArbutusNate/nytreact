@@ -36,13 +36,13 @@ class Search extends Component {
       })
     };
 
-  saveToDb = (event) => {
-    // document.getElementById("");
-    event.preventDefault();
-    Article.save({
+  // saveToDb = (event) => {
+  //   document.getElementById("");
+  //   event.preventDefault();
+  //   Article.save({
 
-    })
-  }
+  //   })
+  // }
 
   render(props) {
     return (
